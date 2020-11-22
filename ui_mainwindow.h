@@ -26,15 +26,16 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QPushButton *startBut;
     QSpinBox *spinBox;
     QProgressBar *progressBar;
-    QWidget *widget1;
+    QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *leftBut;
     QPushButton *rightBut;
+    QPushButton *runBut;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -42,21 +43,21 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(438, 139);
+        MainWindow->resize(438, 175);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
-        widget = new QWidget(centralwidget);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(10, 10, 411, 30));
-        horizontalLayout = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(centralwidget);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(10, 10, 411, 30));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        startBut = new QPushButton(widget);
+        startBut = new QPushButton(layoutWidget);
         startBut->setObjectName(QString::fromUtf8("startBut"));
 
         horizontalLayout->addWidget(startBut);
 
-        spinBox = new QSpinBox(widget);
+        spinBox = new QSpinBox(layoutWidget);
         spinBox->setObjectName(QString::fromUtf8("spinBox"));
         spinBox->setMinimumSize(QSize(100, 0));
         spinBox->setMinimum(100);
@@ -65,29 +66,32 @@ public:
 
         horizontalLayout->addWidget(spinBox);
 
-        progressBar = new QProgressBar(widget);
+        progressBar = new QProgressBar(layoutWidget);
         progressBar->setObjectName(QString::fromUtf8("progressBar"));
         progressBar->setValue(0);
 
         horizontalLayout->addWidget(progressBar);
 
-        widget1 = new QWidget(centralwidget);
-        widget1->setObjectName(QString::fromUtf8("widget1"));
-        widget1->setGeometry(QRect(10, 50, 411, 30));
-        horizontalLayout_2 = new QHBoxLayout(widget1);
+        layoutWidget1 = new QWidget(centralwidget);
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(10, 50, 411, 30));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget1);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        leftBut = new QPushButton(widget1);
+        leftBut = new QPushButton(layoutWidget1);
         leftBut->setObjectName(QString::fromUtf8("leftBut"));
 
         horizontalLayout_2->addWidget(leftBut);
 
-        rightBut = new QPushButton(widget1);
+        rightBut = new QPushButton(layoutWidget1);
         rightBut->setObjectName(QString::fromUtf8("rightBut"));
         rightBut->setEnabled(false);
 
         horizontalLayout_2->addWidget(rightBut);
 
+        runBut = new QPushButton(centralwidget);
+        runBut->setObjectName(QString::fromUtf8("runBut"));
+        runBut->setGeometry(QRect(10, 90, 61, 28));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -108,6 +112,7 @@ public:
         startBut->setText(QCoreApplication::translate("MainWindow", "Start", nullptr));
         leftBut->setText(QCoreApplication::translate("MainWindow", "Left", nullptr));
         rightBut->setText(QCoreApplication::translate("MainWindow", "Right", nullptr));
+        runBut->setText(QCoreApplication::translate("MainWindow", "Run", nullptr));
     } // retranslateUi
 
 };
